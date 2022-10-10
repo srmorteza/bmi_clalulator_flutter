@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+const buttomContainerHeight= 80.0 ;
+const activeCardColor = Color(0XFF1D1E33) ;
+const buttomContainerColor = Color(0XFFEB1555) ;
+
 
 class InputPage extends StatefulWidget {
   @override
@@ -18,27 +22,34 @@ class _InputPageState extends State<InputPage> {
                 child: Row(
               children: [
                 Expanded(
-                  child: ReusableCard(colour:Color(0XFF1D1E33),),
+                  child: ReusableCard(colour:activeCardColor,),
                 ),
                 Expanded(
-                  child: ReusableCard(colour:Color(0XFF1D1E33),),
+                  child: ReusableCard(colour:activeCardColor,),
                 )
               ],
             )),
             Expanded(
-              child: ReusableCard(colour:Color(0XFF1D1E33),),
+              child: ReusableCard(colour:activeCardColor,),
             ),
             Expanded(
                 child: Row(
               children: [
                 Expanded(
-                  child: ReusableCard(colour:Color(0XFF1D1E33),),
+                  child: ReusableCard(colour:activeCardColor,),
                 ),
                 Expanded(
-                  child: ReusableCard(colour:Color(0XFF1D1E33),),
+                  child: ReusableCard(colour:activeCardColor,),
                 )
               ],
-            ))
+            )),
+            Container(
+              color:buttomContainerColor,
+              margin: EdgeInsets.only(top: 10.0),
+              width: double.infinity,
+              height: buttomContainerHeight,
+
+            ),
           ],
         ));
   }
