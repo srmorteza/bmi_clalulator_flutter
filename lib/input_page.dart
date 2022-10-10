@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-
 class InputPage extends StatefulWidget {
   @override
   _InputPageState createState() => _InputPageState();
@@ -16,13 +15,7 @@ class _InputPageState extends State<InputPage> {
       body: Center(
         child: Text('Body Text'),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          // Add your onPressed code here!
-        },
-        backgroundColor: Colors.green,
-        child: const Icon(Icons.add),
-      ),
+
     );
   }
 }
