@@ -1,11 +1,11 @@
 import 'package:bmi_calculator/constants.dart';
-import 'package:bmi_calculator/component//reuseable_card.dart';
+import 'package:bmi_calculator/component/reuseable_card.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'results_page.dart';
-import '../icon_content.dart';
-import '../bottombutton.dart';
-import '../RoundsIcon_button.dart';
+import 'package:bmi_calculator/component/icon_content.dart';
+import 'package:bmi_calculator/component/bottombutton.dart';
+import 'package:bmi_calculator/component/RoundsIcon_button.dart';
 import '../calculator_brain.dart';
 
 enum Gender {
@@ -143,7 +143,7 @@ class _InputPageState extends State<InputPage> {
                           children: [
                             RoundIconButton(
                               icon: FontAwesomeIcons.minus,
-                              onPressed: (){
+                              onPressed: () {
                                 setState(() {
                                   weight--;
                                 });
@@ -154,12 +154,11 @@ class _InputPageState extends State<InputPage> {
                             ),
                             RoundIconButton(
                               icon: FontAwesomeIcons.plus,
-                              onPressed: (){
+                              onPressed: () {
                                 setState(() {
                                   weight++;
                                 });
                               },
-
                             ),
                           ],
                         )
@@ -186,7 +185,7 @@ class _InputPageState extends State<InputPage> {
                           children: [
                             RoundIconButton(
                               icon: FontAwesomeIcons.minus,
-                              onPressed: (){
+                              onPressed: () {
                                 setState(() {
                                   age--;
                                 });
@@ -197,35 +196,38 @@ class _InputPageState extends State<InputPage> {
                             ),
                             RoundIconButton(
                               icon: FontAwesomeIcons.plus,
-                              onPressed: (){
+                              onPressed: () {
                                 setState(() {
                                   age++;
                                 });
                               },
-
                             ),
                           ],
                         )
                       ],
                     ),
                     colour: kActiveCardColor,
-
                   ),
                 )
               ],
             )),
-            BottemBotton(buttonTitle: 'CALCULATE',  onTap: (){
-              CalculatorBrain calc= CalculatorBrain(height: height, weight: weight);
+            BottemBotton(
+              buttonTitle: 'CALCULATE',
+              onTap: () {
+                CalculatorBrain calc =
+                    CalculatorBrain(height: height, weight: weight);
 
-              Navigator.push(context, MaterialPageRoute(builder: (context)=> ResultPage(
-                bmiResult: calc.calculatBMI(),
-                resultText: calc.getResult(),
-                interpretation: calc.getInterpretation(),
-              )));
-            },),
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => ResultPage(
+                              bmiResult: calc.calculatBMI(),
+                              resultText: calc.getResult(),
+                              interpretation: calc.getInterpretation(),
+                            )));
+              },
+            ),
           ],
         ));
   }
 }
-
-
